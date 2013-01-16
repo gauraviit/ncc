@@ -1,3 +1,4 @@
+//Copyright Gaurav Jain
 package ncc;
 import java.awt.print.*;
 import java.sql.*;
