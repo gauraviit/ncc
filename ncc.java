@@ -1,4 +1,3 @@
-//Copyright Gaurav Jain
 package ncc;
 import java.awt.print.*;
 import java.sql.*;
@@ -9,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /*
  * -----------------------------------------------------------------------------
+ *  Copyright-Gaurav Jain 
  * THIS APPLICATION IS MADE FOR  3(BENGAL)TECH AIR SQN NCC , IIT KHARAGPUR
  * BY GAURAV JAIN (12MT10013), 1st YEAR STUDENT, IIT KHARAGPUR.
  * -----------------------------------------------------------------------------
@@ -42,6 +42,8 @@ public class start extends javax.swing.JFrame {
 
         op = new javax.swing.JOptionPane();
         jFrame1 = new javax.swing.JFrame();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -127,7 +129,6 @@ public class start extends javax.swing.JFrame {
         tblg = new javax.swing.JTable();
         jRadioButton8 = new javax.swing.JRadioButton();
         jRadioButton9 = new javax.swing.JRadioButton();
-        jLabel7 = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
@@ -146,22 +147,37 @@ public class start extends javax.swing.JFrame {
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jFrame1.setTitle("CMS-3(B) Tech NCC Air Sqdn.");
         jFrame1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jFrame1.setMinimumSize(new java.awt.Dimension(700, 450));
+        jFrame1.setMinimumSize(new java.awt.Dimension(703, 656));
+        jFrame1.setPreferredSize(new java.awt.Dimension(723, 656));
+
+        jPanel9.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel9.setMinimumSize(new java.awt.Dimension(723, 656));
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ncc/NCC1.jpg"))); // NOI18N
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jTabbedPane1.setMinimumSize(new java.awt.Dimension(703, 373));
+        jTabbedPane1.setOpaque(true);
 
         jPanel2.setMinimumSize(new java.awt.Dimension(483, 233));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setText("Attendence for Date :-");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 15, -1, -1));
 
         jLabel12.setText("Please Enter the Year of Cadet");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 38, -1, -1));
 
         buttonGroup1.add(yr1);
         yr1.setSelected(true);
         yr1.setText("1st Year");
+        jPanel2.add(yr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 34, -1, -1));
 
         buttonGroup1.add(yr2);
         yr2.setText("2nd Year");
+        jPanel2.add(yr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 34, -1, -1));
 
         jButton2.setText("Mark Present");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -169,10 +185,13 @@ public class start extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 161, -1, -1));
 
         msg.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel2.add(msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 202, 436, 20));
 
         dat.setEditable(false);
+        jPanel2.add(dat, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 12, 133, -1));
 
         buttonGroup3.add(jRadioButton2);
         jRadioButton2.setSelected(true);
@@ -182,6 +201,7 @@ public class start extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 64, -1, -1));
 
         buttonGroup3.add(jRadioButton3);
         jRadioButton3.setText("IIT ROLL NO.");
@@ -190,6 +210,7 @@ public class start extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
+        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 89, -1, -1));
 
         buttonGroup3.add(jRadioButton4);
         jRadioButton4.setText("REGIMENTAL NO.");
@@ -198,12 +219,14 @@ public class start extends javax.swing.JFrame {
                 jRadioButton4ActionPerformed(evt);
             }
         });
+        jPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 120, -1, -1));
 
         flt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fltActionPerformed(evt);
             }
         });
+        jPanel2.add(flt, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 64, 91, -1));
 
         iitrno.setEnabled(false);
         iitrno.addActionListener(new java.awt.event.ActionListener() {
@@ -211,6 +234,7 @@ public class start extends javax.swing.JFrame {
                 iitrnoActionPerformed(evt);
             }
         });
+        jPanel2.add(iitrno, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 90, 91, -1));
 
         regt1.setEnabled(false);
         regt1.addActionListener(new java.awt.event.ActionListener() {
@@ -218,74 +242,7 @@ public class start extends javax.swing.JFrame {
                 regt1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel12)
-                                    .addGap(100, 100, 100)
-                                    .addComponent(yr1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(yr2))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jRadioButton2)
-                                        .addComponent(jRadioButton3)
-                                        .addComponent(jRadioButton4))
-                                    .addGap(70, 70, 70)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(jLabel9)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(dat, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(flt, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                                            .addComponent(iitrno)
-                                            .addComponent(regt1))))))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(135, 135, 135)
-                            .addComponent(jButton2))))
-                .addContainerGap(600, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(dat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(yr1)
-                    .addComponent(yr2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addComponent(flt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(iitrno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton4)
-                    .addComponent(regt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
-        );
+        jPanel2.add(regt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 121, 91, -1));
 
         jTabbedPane1.addTab("Attendence", jPanel2);
 
@@ -339,7 +296,7 @@ public class start extends javax.swing.JFrame {
                             .addComponent(p2)
                             .addComponent(a2)
                             .addComponent(jLabel10))))
-                .addContainerGap(476, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(257, 257, 257)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,14 +339,17 @@ public class start extends javax.swing.JFrame {
                 .addComponent(ps)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(as)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reports", jPanel1);
 
+        jPanel3.setMinimumSize(new java.awt.Dimension(696, 343));
         jPanel3.setName(""); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         atdlbl.setText("Today's Attendence Report");
+        jPanel3.add(atdlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -423,12 +383,15 @@ public class start extends javax.swing.JFrame {
         tbl.getColumnModel().getColumn(5).setPreferredWidth(50);
         tbl.getColumnModel().getColumn(6).setPreferredWidth(10);
 
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 31, 457, 301));
+
         jButton3.setText("Print");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 43, -1, -1));
 
         jButton4.setText("Present's List");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -436,6 +399,7 @@ public class start extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(473, 145, -1, -1));
 
         jButton5.setText("Absent's List");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -443,6 +407,7 @@ public class start extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 145, -1, -1));
 
         jButton6.setText("Total Attendence");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -450,100 +415,43 @@ public class start extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 116, -1, -1));
 
         plbl.setText("Present Student's :-");
+        jPanel3.add(plbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 194, 124, -1));
 
         plbl1.setText("Absent Student's :-");
+        jPanel3.add(plbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 214, 124, -1));
 
         plbl2.setText("Total Student's :-");
+        jPanel3.add(plbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 174, 124, -1));
 
         buttonGroup2.add(yr3);
         yr3.setText("2nd Year");
+        jPanel3.add(yr3, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 68, -1, -1));
 
         buttonGroup2.add(yr4);
         yr4.setSelected(true);
         yr4.setText("1st Year");
+        jPanel3.add(yr4, new org.netbeans.lib.awtextra.AbsoluteConstraints(503, 68, -1, -1));
 
         buttonGroup2.add(jRadioButton1);
         jRadioButton1.setText("Combined");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(atdlbl)
-                        .addGap(491, 558, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(yr4)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(yr3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton1))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jButton6))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(plbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(plbl, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(plbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(166, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(yr4)
-                            .addComponent(yr3)
-                            .addComponent(jRadioButton1))
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5))
-                        .addGap(9, 9, 9)
-                        .addComponent(plbl2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plbl1)
-                        .addGap(137, 137, 137))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(atdlbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 91, -1, -1));
 
         jTabbedPane1.addTab("Today's Report", jPanel3);
 
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel4.setText("Find Attendence of Date:- ");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 73, -1, -1));
 
         cbm.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec" }));
+        jPanel4.add(cbm, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 93, -1, -1));
 
         cby.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
+        jPanel4.add(cby, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 93, -1, -1));
+        jPanel4.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 93, 34, -1));
 
         jButton7.setText("Total Attendence List");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -551,12 +459,16 @@ public class start extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        jPanel4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
         plb.setText("Present Student's :-");
+        jPanel4.add(plb, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 131, 128, -1));
 
         alb.setText("Absent Student's:-");
+        jPanel4.add(alb, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 156, 128, -1));
 
         tlb.setText("Total Student's:-");
+        jPanel4.add(tlb, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 181, 128, -1));
 
         buttonGroup4.add(drd);
         drd.setSelected(true);
@@ -566,6 +478,7 @@ public class start extends javax.swing.JFrame {
                 drdActionPerformed(evt);
             }
         });
+        jPanel4.add(drd, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 32, -1, -1));
 
         buttonGroup4.add(mrd);
         mrd.setText("Progressive Report");
@@ -574,96 +487,23 @@ public class start extends javax.swing.JFrame {
                 mrdActionPerformed(evt);
             }
         });
+        jPanel4.add(mrd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 22, 12, 207));
 
         jLabel1.setText("Total no. of days:-");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         jLabel2.setText("Total present students:-");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mrd)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nnd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(drd))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(plb, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(alb, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tlb, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4))))
-                .addContainerGap(264, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(jButton7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(drd)
-                            .addComponent(mrd))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(nnd, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(pnd, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cbm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cby, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(plb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(alb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tlb))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jButton7)
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jPanel4.add(nnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 82, 46, 14));
+        jPanel4.add(pnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 114, 46, 14));
 
         jTabbedPane1.addTab("Previous Reports", jPanel4);
+
+        jPanel5.setMinimumSize(new java.awt.Dimension(565, 201));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton9.setText("Get Report");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -671,19 +511,26 @@ public class start extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
+        jPanel5.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 141, -1, -1));
 
         buttonGroup5.add(yr5);
         yr5.setText("2nd Year");
+        jPanel5.add(yr5, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 7, -1, -1));
 
         regt2.setEnabled(false);
+        jPanel5.add(regt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 100, 91, -1));
 
         iitrno1.setEnabled(false);
+        jPanel5.add(iitrno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 69, 91, -1));
 
         buttonGroup5.add(yr6);
         yr6.setSelected(true);
         yr6.setText("1st Year");
+        jPanel5.add(yr6, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 7, -1, -1));
+        jPanel5.add(flt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 38, 91, -1));
 
         jLabel13.setText("Please Enter the Year of Cadet");
+        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 11, -1, -1));
 
         buttonGroup6.add(jRadioButton5);
         jRadioButton5.setSelected(true);
@@ -693,6 +540,7 @@ public class start extends javax.swing.JFrame {
                 jRadioButton5ActionPerformed(evt);
             }
         });
+        jPanel5.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 37, -1, -1));
 
         buttonGroup6.add(jRadioButton6);
         jRadioButton6.setText("IIT ROLL NO.");
@@ -701,6 +549,7 @@ public class start extends javax.swing.JFrame {
                 jRadioButton6ActionPerformed(evt);
             }
         });
+        jPanel5.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 68, -1, -1));
 
         buttonGroup6.add(jRadioButton7);
         jRadioButton7.setText("REGIMENTAL NO.");
@@ -709,89 +558,23 @@ public class start extends javax.swing.JFrame {
                 jRadioButton7ActionPerformed(evt);
             }
         });
+        jPanel5.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 100, -1, -1));
 
         jLabel8.setText("No of days");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 37, -1, -1));
 
         jLabel14.setText("No. of Days Present");
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 57, -1, -1));
 
         jLabel15.setText("No. of days absent");
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 77, -1, -1));
 
         jLabel16.setText("perentage of attendence");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(100, 100, 100)
-                        .addComponent(yr6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(yr5))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jRadioButton5)
-                                .addGap(104, 104, 104)
-                                .addComponent(flt1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton6)
-                                    .addComponent(jRadioButton7))
-                                .addGap(70, 70, 70)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(iitrno1)
-                                    .addComponent(regt2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
-                                .addComponent(jButton9)))
-                        .addGap(231, 231, 231)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16))))
-                .addContainerGap(421, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(yr6)
-                    .addComponent(yr5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton5)
-                            .addComponent(flt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton6)
-                            .addComponent(iitrno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton7)
-                            .addComponent(regt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton9)))
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
+        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 97, -1, -1));
 
         jTabbedPane1.addTab("Indivisual Report", jPanel5);
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton10.setText("Print");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -799,6 +582,7 @@ public class start extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 59, -1, -1));
 
         jButton11.setText("A (80 and above)");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -806,6 +590,7 @@ public class start extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 93, -1, -1));
 
         jButton12.setText("B(70 - 79)");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -813,6 +598,7 @@ public class start extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 122, -1, -1));
 
         jButton13.setText("C(60-69)");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -820,6 +606,7 @@ public class start extends javax.swing.JFrame {
                 jButton13ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 156, -1, -1));
 
         jButton14.setText("D(50-59)");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -827,6 +614,7 @@ public class start extends javax.swing.JFrame {
                 jButton14ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 190, -1, -1));
 
         jButton15.setText("F(Below 50)");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -834,6 +622,7 @@ public class start extends javax.swing.JFrame {
                 jButton15ActionPerformed(evt);
             }
         });
+        jPanel6.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 224, -1, -1));
 
         tblg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -864,88 +653,59 @@ public class start extends javax.swing.JFrame {
         tblg.getColumnModel().getColumn(2).setMaxWidth(100);
         tblg.getColumnModel().getColumn(6).setMaxWidth(200);
 
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 489, 321));
+
         buttonGroup7.add(jRadioButton8);
         jRadioButton8.setSelected(true);
         jRadioButton8.setText("1st Year");
+        jPanel6.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 11, -1, -1));
 
         buttonGroup7.add(jRadioButton9);
         jRadioButton9.setText("2nd Year");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 863, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton15)
-                    .addComponent(jButton14)
-                    .addComponent(jButton13)
-                    .addComponent(jButton12)
-                    .addComponent(jButton11)
-                    .addComponent(jButton10)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jRadioButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton9)))
-                .addGap(46, 46, 46))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton8)
-                            .addComponent(jRadioButton9))
-                        .addGap(25, 25, 25)
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton15)
-                        .addGap(0, 83, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        jPanel6.add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 11, -1, -1));
 
         jTabbedPane1.addTab("GRADE", jPanel6);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ncc/NCC1.jpg"))); // NOI18N
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 723, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel9Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap()))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel9Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel7)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
         jFrame1Layout.setHorizontalGroup(
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addContainerGap(347, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(284, 284, 284))
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jFrame1Layout.setVerticalGroup(
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(5, 5, 5)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("CMS - 3 (B) Tech NCC Air Sqdn");
+        setTitle("CMS - 3 (B) Tech Air Sqn NCC");
         setAlwaysOnTop(true);
         setName("start"); // NOI18N
 
@@ -964,23 +724,23 @@ public class start extends javax.swing.JFrame {
 
         jLabel3.setText("ENTER THE PASSWORD");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ncc/NCC.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("H:\\NCC\\suryakiranNew.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -988,29 +748,30 @@ public class start extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(295, 295, 295)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jButton1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jButton1))
-                .addContainerGap())
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(pwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1)))
         );
 
         pack();
@@ -1053,6 +814,7 @@ static int i =0,p=0,t=0;
             yr1.setEnabled(false);
             yr2.setEnabled(false);
             dat.setEnabled(false);
+            jPanel1.requestFocusInWindow();
             }
             else{
          try{ 
@@ -1100,8 +862,9 @@ jButton1.doClick(100);        // TODO add your handling code here:
     @SuppressWarnings("static-access")
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          Calendar c = Calendar.getInstance();
-        int yr,fltno=0,flag=0,cdtno=0;
+        int yr=1,fltno=0,flag=0,cdtno=0;
         String iitrn,regtno;
+        if(jRadioButton2.isSelected()){
         if(yr1.isSelected()) {
             yr=1;
         }
@@ -1118,7 +881,7 @@ jButton1.doClick(100);        // TODO add your handling code here:
             op.showMessageDialog(this,"Please Enter a Numeric Value","Mismatch Datatype",2);
         op.requestFocusInWindow();
         flt.setText("");
-        }
+        }}
         iitrn=iitrno.getText();
         regtno = regt1.getText();
             if(flag==1){
@@ -1131,20 +894,20 @@ jButton1.doClick(100);        // TODO add your handling code here:
             stmt.executeUpdate("Update atd SET D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"= 'P' Where fltno = "+fltno+"&& yr = "+yr+" && cdtno = "+cdtno+";");
             flt.setText("");
             flt.requestFocusInWindow();
-            }
+            msg.setText("Attendence Updated for Flight No. "+fltno+"Cadet No."+cdtno);}
             else{
                 if(jRadioButton3.isSelected()){
-            stmt.executeUpdate("Update atd SET D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"= 'P' Where iit = "+iitrn+";");
+            stmt.executeUpdate("Update atd SET D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"= 'P' Where iit = \""+iitrn+"\";");
             iitrno.setText("");
             iitrno.requestFocusInWindow();
-                }else{
-                    
-            stmt.executeUpdate("Update atd SET D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"= 'P' Where regtno = "+regtno+";");
+            msg.setText("Attendence Updated for IIT ROLLNO:-"+iitrn+".");
+                }else{                    
+            stmt.executeUpdate("Update atd SET D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"= 'P' Where regtno =\""+regtno+"\";");
             regt1.setText("");
             regt1.requestFocusInWindow();
-               }
+            msg.setText("Attendence Updated for Regt no. ="+regtno+".");
+                }
             }
-            msg.setText("Attendence Updated ");
             rs = stmt.executeQuery("Select Count(*) from atd;");
             rs.first();
             int ttl = rs.getInt(1);
@@ -1242,7 +1005,7 @@ Calendar c = Calendar.getInstance();
                     rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='P' && yr=1 order by yr,fltno,cdtno;");
             }else{
                 if(yr3.isSelected()){
-                    rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='P' && yr=1 order by yr,fltno,cdtno;");
+                    rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='P' && yr=2 order by yr,fltno,cdtno;");
                 }
                 else{
                     rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='P' order by yr,fltno,cdtno;");
@@ -1276,7 +1039,7 @@ Calendar c = Calendar.getInstance();
                     rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='A' && yr=1 order by yr,fltno,cdtno;");
             }else{
                 if(yr3.isSelected()){
-                    rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='A' && yr=1 order by yr,fltno,cdtno;");
+                    rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='A' && yr=2 order by yr,fltno,cdtno;");
                 }
                 else{
                     rs = stmt.executeQuery("Select yr,fltno,cdtno,iit,regtno,name,D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+" from atd  where D"+c.get(Calendar.DATE)+"_"+(c.get(Calendar.MONTH)+1)+"_"+c.get(Calendar.YEAR)+"='A' order by yr,fltno,cdtno;");
@@ -1333,24 +1096,36 @@ jButton2.doClick();        // TODO add your handling code here:
     }//GEN-LAST:event_regt1ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-
+flt.setText(""); 
+    iitrno.setText("");
+            regt1.setText("");  
+            yr1.setEnabled(false);
+            yr2.setEnabled(false);
         iitrno.setEnabled(true);    
         flt.setEnabled(false);
             regt1.setEnabled(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-
+flt.setText(""); 
+    iitrno.setText("");
+            regt1.setText("");  
+            yr1.setEnabled(false);
+            yr2.setEnabled(false);
             iitrno.setEnabled(false);
            regt1.setEnabled(true);
             flt.setEnabled(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-
-        flt.setEnabled(true);  
-        iitrno.setEnabled(false);
-            regt1.setEnabled(false);        // TODO add your handling code here:
+flt.setText(""); 
+    iitrno.setText("");
+            regt1.setText("");  
+            yr1.setEnabled(true);
+            yr2.setEnabled(true);
+        iitrno.setEnabled(false);  
+         flt.setEnabled(true); 
+         regt1.setEnabled(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     @SuppressWarnings("static-access")
@@ -1507,21 +1282,33 @@ Calendar c = Calendar.getInstance();
        int days,num=0,j=0,fltno=0,cdtno=0,yr=0;
        String iitrn="";
        String regtno="";
+                   jLabel8.setText("No. of Days:- ");
+                   jLabel14.setText("No. of Days present:- ");
+                   jLabel15.setText("No. of days absent:- ");
+                   jLabel16.setText("Percentage of Attendence:- ");
+                  
        if(jRadioButton5.isSelected()){
-           if(yr5.isSelected()){
+       try{    if(yr5.isSelected()){
                yr=2;
            }else{
                yr=1;
            }
            fltno = Integer.parseInt(flt1.getText());
            cdtno=fltno%100;
-           fltno = fltno/100;
-       }else{
+           fltno = fltno/100;}
+       catch(Exception e){
+           op.showMessageDialog(this,"Please Enter a Valid Numeric Value.");
+       }
+       }else{try{
            if(jRadioButton6.isSelected()){
                iitrn= iitrno1.getText();
            }else{
                regtno = regt2.getText();
            }
+       }
+       catch(Exception e){
+           op.showMessageDialog(this,"Please Enter a valid value");
+       }
        }
         try{
                     Class.forName("com.mysql.jdbc.Driver");
@@ -1545,13 +1332,17 @@ Calendar c = Calendar.getInstance();
                       j--;
                       if(jRadioButton5.isSelected()){
                            rs = stmt.executeQuery("Select count("+daynam[j]+") from atd where "+daynam[j]+"='P' && fltno = "+fltno+" && cdtno = "+cdtno+"&& yr = "+yr+";");
-                      }
+                     
+                      iitrno1.setText("");
+                      iitrno1.requestFocusInWindow();}
                       else{
                           if(jRadioButton6.isSelected()){
-                      rs = stmt.executeQuery("Select count("+daynam[j]+") from atd where "+daynam[j]+"='P' && iit = "+iitrn+";");         
-                          }else{
-                      rs = stmt.executeQuery("Select count("+daynam[j]+") from atd where "+daynam[j]+"='P' && regt = "+regtno+";");         
-                              
+                      rs = stmt.executeQuery("Select count("+daynam[j]+") from atd where "+daynam[j]+"='P' && iit = \""+iitrn+"\";");         
+                          flt1.setText("");
+                      flt1.requestFocusInWindow(); }else{
+                      rs = stmt.executeQuery("Select count("+daynam[j]+") from atd where "+daynam[j]+"='P' && regtno = \""+regtno+"\";");         
+                          regt2.setText("");
+                      regt2.requestFocusInWindow();     
                           }
                       }
                           rs.first();
@@ -1575,20 +1366,35 @@ Calendar c = Calendar.getInstance();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-flt1.setEnabled(true);
-regt1.setEnabled(false);
-iitrno1.setEnabled(false);// TODO add your handling code here:
+flt1.setText("");
+regt2.setText("");
+iitrno1.setText("");
+yr5.setEnabled(true);
+yr6.setEnabled(true);
+        flt1.setEnabled(true);
+        regt2.setEnabled(false);
+        iitrno1.setEnabled(false);// TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+flt1.setText("");
+regt2.setText("");
+iitrno1.setText("");
+yr5.setEnabled(false);
+yr6.setEnabled(false);
 iitrno1.setEnabled(true);
-regt1.setEnabled(false);
+regt2.setEnabled(false);
 flt1.setEnabled(false);// TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-regt1.setEnabled(true);
+flt1.setText("");
+regt2.setText("");
+iitrno1.setText("");
+yr5.setEnabled(false);
+yr6.setEnabled(false);
+regt2.setEnabled(true);
 flt1.setEnabled(false);
 iitrno1.setEnabled(false);// TODO add your handling code here:
         // TODO add your handling code here:
@@ -1963,6 +1769,7 @@ int days,num,j=0;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
